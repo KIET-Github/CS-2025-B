@@ -5,7 +5,7 @@ This repository contains the details of major project created by the students of
 This repository contains the details of students under following faculty mentor only.
 <ul>
 <li>Mr. Guarav Dubey</li>
-<li>Ms. Akanksha</li>
+<li>Mr. Rajkumar Singh </li>
 <li>Mr. Harsh khatter</li>
 <li>Mr. Pawan Kumar Pal</li>
 <li>Mr. Vivek kumar Sharma</li>
