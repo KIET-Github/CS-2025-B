@@ -1,0 +1,5 @@
+.env
+env/
+# gunicorn app:app
+venv
+request.py
