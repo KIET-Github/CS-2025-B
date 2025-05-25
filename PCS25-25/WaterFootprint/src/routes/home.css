@@ -1,0 +1,208 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Croissant+One&family=Pacifico&family=Poppins:wght@300;400;500;600;800;900&family=Roboto&family=Sigmar&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Croissant+One&family=Pacifico&family=Poppins:wght@300;400;500;600;800;900&family=Roboto&family=Sigmar&family=Skranji:wght@700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Croissant+One&family=Kanit:wght@600&family=Pacifico&family=Poppins:wght@300;400;500;600;800;900&family=Roboto&family=Sigmar&family=Skranji:wght@700&display=swap');
+
+:root{
+    --second-bg-color:#112e42;
+   --bg-color: #081b29;
+   --text-color:#ededed;
+   --main-color:#00abf0;
+}
+
+.image{
+    z-index: -1;
+    transform: translateY(-90px);
+    position: relative;
+}
+
+.image::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: black;
+    opacity: 0.4;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    position: absolute;
+    background: transparent;
+    top: 550px;
+    color: black;
+    left: 190px;
+}
+
+
+
+.des{
+    color: black;
+    font-family: 'Croissant One';
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
+    -webkit-text-stroke:0.5px white 
+}
+
+.save{
+    transform: translateY(-90px);
+    background-color:skyblue;
+    display: flex;
+    /* height: 500px; */
+    justify-content:center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.heading-save{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    margin: 0 40px;
+    -webkit-text-stroke: 3px black;
+     color: white;
+     font-family:'skranji' ;
+}
+
+.save-des{
+    font-size: 1.3rem;
+    width: 500px;
+    font-weight: 500;
+    color:black;
+    font-family: cursive;
+}
+
+.three{
+    background-color: skyblue;
+    transform: translateY(-100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.line{
+    width: 600px;
+    margin: 20px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: lightcyan;
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.line img{
+    margin: 4px;
+    width: 80px;
+    height: 80px;
+}
+
+.line h4{
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+.divee{
+     display: flex;
+     background-color: skyblue;
+     justify-content: center;
+     transform: translateY(-100px);
+}
+
+.dive-main{
+    margin-top: 20px;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+
+.dive-heading{
+    font-size: 3rem;
+    font-family: 'kanit';
+    margin: 10px;
+}
+
+.dive-des{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 600px;
+    font-weight: bold;
+}
+
+.btns{
+    display: flex;
+    margin: 40px;
+}
+
+.box{
+    border-radius: 8px;
+    background-color:white;
+    margin: 20px;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2.5px solid black;
+    transition: all 0.5s ease;
+    padding: 0 5px;
+}
+
+.box:hover{
+    transform: scale(1.1);
+    padding: 0 10px;
+}
+
+.box-des{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.box button{
+    padding: 12px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    border: 2px solid black;
+    position: relative;
+    color: black;
+    margin-bottom: 3px;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    min-width: 90px;
+    z-index: 99;
+}
+
+.box button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color:darkblue;
+    color: white;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.box button:hover::before{
+        width: 100%;
+}
+
+.box button:hover{
+    color: white;
+}
+

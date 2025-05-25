@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Blueberry';
+    src: url('./fonts/Blueberry\ .ttf') format('ttf');
+    /* Add more font formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Blueberry', sans-serif; /* Use the declared font-family in your styles */
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Croissant+One&family=Kanit:wght@600&family=Nunito+Sans:opsz,wght@6..12,600&family=Pacifico&family=Poppins:wght@300;400;500;600;800;900&family=Roboto&family=Sigmar&family=Skranji:wght@700&display=swap');
+.stop{
+    
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    transform: translate(240px,480px);
+    padding: 8px;
+    border:3px solid black
+}
+
+.submit{
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin: 16px 0;
+   
+    padding: 8px 12px;
+    border:3px solid black
+}
+
+
+
+.App-header{
+    box-shadow: 0px 4px 8px rgba(12, 11, 11, 0.2);
+    transform: translate(-340px,100px);
+}
+
+.camera_heading{
+    transform: translate(700px,100px);
+    width: 500px;
+    color:#08b3fc;
+    font-family: 'Roboto';
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
+
+.options_box{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transform: translate(700px,60px);
+    border-radius: 20px;
+    /* box-shadow: ; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    padding: 7px 40px;
+    min-height: 400px;
+    max-height: 480px;
+    /* overflow-y: scroll; */
+}
+
+/* // The code is a bit of a mess at the moment! Sorry about that. */
+
+body {
+  padding: 1rem;
+  /* color: hsla(215, 5%, 50%, 1); */
+  color:black;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  width: 400px;
+}
+section > div {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+form{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.box_input{
+    width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  /* border: 2px solid blue; */
+  /* width: 300px; */
+}
+
+.one_more{
+    overflow-y: scroll;
+    max-height: 300px;
+    width: 250px;
+}
+
+
+
+input[type="radio"] {
+  display: none;
+  /* width: 400px; */
+  &:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  &:disabled ~ label {
+    color: hsla(150, 5%, 75%, 1);
+    border-color: hsla(150, 5%, 75%, 1);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
+label {
+  height: 100%;
+  display: block;
+  background: white;
+  border: 2px solid hsla(150, 75%, 50%, 1);
+  border-radius: 20px;
+  padding: 0.6rem;
+  margin-bottom: 1.3rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+  position: relative;
+}
+input[type="radio"]:checked + label {
+  background: hsla(150, 75%, 50%, 1);
+  color: hsla(215, 0%, 100%, 1);
+  box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
+}
+input[type="radio"]#control_05:checked + label {
+  background: red;
+  border-color: red;
+}
+p {
+  font-weight: 900;
+}
+
+.blue_berry{
+    font-family: sans-serif;
+    color: blue;
+}
+
+ .final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 700px) {
+  section {
+    flex-direction: column;
+  }
+}

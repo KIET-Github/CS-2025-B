@@ -1,0 +1,46 @@
+.calculate img{
+    z-index: -1;
+    position: relative;
+    opacity: 0.5;
+}
+
+.calculate img::after{
+    content: '';
+    position: absolute;  
+    top:0;
+    height: 100%;
+    width:100%;
+    left: 0; 
+}
+
+.page{
+   z-index: -1;
+    position: absolute;
+    top: 80px;
+    width: 800px;
+    left: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page h1{
+        font-size: 3rem;
+}
+
+.page h3{
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: cursive;
+    text-align: center;
+}
+
+.page h5{
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
