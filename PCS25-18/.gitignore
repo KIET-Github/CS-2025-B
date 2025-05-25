@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Environments
+venv/
+env/
+.vscode/
+vqa-env/
+
+# Datasets and models
+*.pt
+*.pkl
+*.zip
+*.h5
+*.csv
+datasets/
+models/
+
+# System files
+.DS_Store
+Thumbs.db
