@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Body Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 30px; }
+        input[type="file"] { margin: 20px 0; }
+        img { max-width: 400px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🌍 Water Body Classifier</h1>
+
+    <!-- Form to upload image -->
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br>
+        <button type="submit">Classify Image</button>
+    </form>
+
+    {% if result %}
+    <div>
+        <h2>Prediction: {{ result }}</h2>
+        <img src="{{ image_url }}" alt="Uploaded Image">
+    </div>
+    {% endif %}
+</body>
+</html>
