@@ -1,0 +1,35 @@
+########################
+#  Python & Django     #
+########################
+__pycache__/
+*.py[cod]
+*$py.class
+
+#  Virtual-envs
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+#  Local data & logs
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+#  Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+#  IDEs / editors
+.vscode/
+.idea/
+
+#  macOS / Windows cruft
+.DS_Store
+Thumbs.db
