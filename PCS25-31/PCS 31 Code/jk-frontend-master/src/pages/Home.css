@@ -1,0 +1,102 @@
+/* General Page Styling */
+.home-container {
+    min-height: 100vh;
+    background-color: #0d85a3;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: black;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .nav-link, .logout-button {
+    text-decoration: none;
+    background-color: white;
+    color: #1081d1;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    background-color: #e6fffa;
+  }
+  
+  .logout-button {
+    background-color: #e53e3e;
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background-color: #c53030;
+  }
+  
+  /* Content */
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .greeting {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Avatar Upload */
+  .avatar-container {
+    position: relative;
+  }
+  
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05);
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .upload-hint {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
