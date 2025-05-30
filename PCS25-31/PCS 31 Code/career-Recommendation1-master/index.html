@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Recommendation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .checkbox-columns {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .checkbox-columns > div {
+      flex: 1;
+      min-width: 200px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+    }
+    input[type="checkbox"] {
+  margin-right: 12px;
+  transform: scale(1.9);
+  accent-color: #28a745; /* Optional: green color */
+  cursor: pointer;
+}
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+    .result {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 6px 0;
+    }
+    .graph-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #ffd700;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .graph-link:hover {
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+      label {
+        font-size: 14px;
+      }
+      .submit-btn {
+        width: 100%;
+      }
+      .checkbox-columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎯 Career Recommendation System</h1>
+
+<form id="recommendForm">
+  <div class="checkbox-columns">
+    <div id="leftColumn"></div>
+    <div id="rightColumn"></div>
+  </div>
+  <button type="submit" class="submit-btn">Get Recommendations</button>
+</form>
+
+<div id="output" class="result"></div>
+
+<script>
+  const fields = [
+    "Drawing", "Dancing", "Singing", "Sports", "Video_Game", "Acting", "Travelling", "Gardening",
+    "Animals", "Photography", "Teaching", "Exercise", "Coding", "Electricity_Components",
+    "Mechanic_Parts", "Computer_Parts", "Researching", "Architecture", "Historic_Collection",
+    "Botany", "Zoology", "Physics", "Accounting", "Economics", "Sociology", "Geography", "Psychology",
+    "History", "Science", "Business_Education", "Chemistry", "Mathematics", "Biology", "Designing",
+    "Content_Writing", "Crafting", "Literature", "Reading", "Cartooning", "Debating", "Astrology",
+    "Hindi", "French", "English", "Solving_Puzzles", "Gymnastics", "Yoga", "Engineering",
+    "Doctor", "Pharmacist", "Cycling", "Knitting", "Director", "Journalism", "Business", "Listening_to_Music"
+  ];
+
+  const leftColumn = document.getElementById('leftColumn');
+  const rightColumn = document.getElementById('rightColumn');
+  const form = document.getElementById('recommendForm');
+  const output = document.getElementById('output');
+
+  fields.forEach((field, index) => {
+    const checkboxHTML = `
+      <label>
+        <input type="checkbox" name="${field}" value="1" />
+        ${field.replace(/_/g, ' ')}
+      </label>`;
+    (index % 2 === 0 ? leftColumn : rightColumn).innerHTML += checkboxHTML;
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    fields.forEach(f => data[f] = formData.has(f) ? 1 : 0);
+
+    const response = await fetch('http://127.0.0.1:8000/recommend', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    // Save to localStorage for chart.html
+    localStorage.setItem('recommendations', JSON.stringify(result.recommendations));
+    localStorage.setItem('chart', result.chart);
+
+    // Display recommendations
+    output.innerHTML = `
+  <div class="card" style="background: ; color: black;">
+    <h2>🧠 Top Career Recommendations</h2>
+    <ul style="list-style: none; padding: 0;">
+      ${result.recommendations.map(r => `
+        <li style="
+          background: rgba(255,255,255,0.15);
+          margin: 6px 0;
+          padding: 10px;
+          border-radius: 6px;
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+        ">
+          <span>${r[0]}</span>
+          <span style="color: #ffe600;">${(r[1] * 100).toFixed(2)}%</span>
+        </li>
+      `).join('')}
+    </ul>
+    <a class="graph-link" href="chart.html" target="_blank">📊 View Bar Chart </a>
+  </div>
+`;
+
+  });
+</script>
+</body>
+</html>

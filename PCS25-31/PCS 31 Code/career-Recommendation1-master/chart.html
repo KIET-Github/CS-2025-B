@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Chart</title>
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+    h2 {
+      color: #ffe600;
+    }
+  </style>
+</head>
+<body>
+  <h2>📊 Career Recommendation Chart</h2>
+  <div id="chartContainer"></div>
+
+  <script>
+    const chartData = localStorage.getItem('chart');
+    if (chartData) {
+      const img = document.createElement('img');
+      img.src = "data:image/png;base64," + chartData;
+      document.getElementById('chartContainer').appendChild(img);
+    } else {
+      document.getElementById('chartContainer').innerHTML = "<p>No chart data available. Please go back and submit the form first.</p>";
+    }
+  </script>
+</body>
+</html>
